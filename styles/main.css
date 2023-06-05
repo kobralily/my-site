@@ -1,0 +1,185 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+  *{
+    box-sizing: inherit;
+  }
+
+body {
+    /* font-family: sans-serif; */
+    color: #fff;
+    background: #222;
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----- Paint Image ---- */
+#paint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 72rem
+}
+
+#paint img {
+  max-width: 50rem;
+}
+
+
+/* ----- Name and Intro text ----- */
+
+#intro {
+  /*position*/
+  position: relative;
+  top: -600px;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 7rem;
+  margin: 0;
+  text-align: center;
+}
+
+#DDP {
+  font-size: 3rem;
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1rem 0 0 0;
+}
+
+/* ----- Top heading set of buttons ----- */
+
+nav {
+    margin: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav1 li {
+    margin: 0 1rem 0 1rem;
+    font-size: 1.3rem;
+    width: 8rem;
+    text-align: center;
+    padding: .5rem 1.25rem .5rem 1.25rem;
+
+    /*border*/
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px;
+  }
+
+/* ---------- Next set of buttons -------- */
+#nav2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.textbox {
+    margin: 0.75rem 0 0.75rem 0;
+    font-size: 2.2rem;
+    width: 16rem;
+    text-align: center;
+    padding: .5rem 1.25rem .5rem 1.25rem;
+    list-style-type: none;
+    /* text-shadow: #222; */
+
+    /*border*/
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px;
+}
+
+.colorbox {
+    list-style-type: none;
+    width: 19rem;
+    height: 0.9rem;
+
+    /*position*/
+    position: relative;
+    top: -34.5px;
+    z-index: -1;
+}
+/*colors*/
+#box1 {
+    background-color: #de7170;
+}
+#box2 {
+    background-color: #f7af53;
+}
+#box3 {
+    background-color: #068483;
+}
+
+
+/* basics */
+h2 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+li {
+  font-size: 1.5rem;
+}
+
+
+
+#about {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#about-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  margin: 0 1rem 0 5rem;
+}
+
+#pfp {
+  max-width: 500px;
+}
+
+#pfp img {
+  width: 100%;
+}
+
+
+
+
+
+/* links */
+#nav1 a, #nav2 a {
+  text-decoration: none;
+  color: #fff;
+}

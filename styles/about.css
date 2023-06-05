@@ -1,0 +1,116 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+  *{
+    box-sizing: inherit;
+  }
+
+body {
+    /* font-family: sans-serif; */
+    color: #fff;
+    background: #222;
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----- Top heading set of buttons ----- */
+
+nav {
+    margin: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav1 li {
+    margin: 0 1rem 0 1rem;
+    font-size: 1.3rem;
+    width: 8rem;
+    text-align: center;
+    padding: .5rem 1.25rem .5rem 1.25rem;
+
+    /*border*/
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px;
+}
+
+
+/* basics */
+h2 {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 1.5rem;
+  }
+  
+  li {
+    font-size: 1.5rem;
+  }
+
+
+/* about text at top */
+#about {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#about-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  margin: 0 1rem 0 5rem;
+}
+
+#pfp {
+  max-width: 500px;
+}
+
+#pfp img {
+  width: 100%;
+}
+
+/* middle set navs */
+#aboutnav {
+    margin-top: 3rem;
+}
+
+#aboutnav li {
+    margin: 0 1rem 0 1rem;
+    font-size: 1.3rem;
+    width: 10rem;
+    text-align: center;
+    padding: .5rem 1.25rem .5rem 1.25rem;
+
+    /*border*/
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px;
+}
+
+
+/* links */
+a {
+    text-decoration: none;
+    color: #fff;
+  }

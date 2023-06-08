@@ -57,15 +57,19 @@ nav ul {
 h2 {
     font-size: 2.2rem;
     margin: 0;
-  }
-  
-  p {
-    font-size: 1.5rem;
-  }
-  
-  li {
-    font-size: 1.5rem;
-  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+li {
+  font-size: 1.5rem;
+}
 
 
 /* about text at top */
@@ -100,13 +104,47 @@ h2 {
     font-size: 1.3rem;
     width: 10rem;
     text-align: center;
-    padding: .5rem 1.25rem .5rem 1.25rem;
+    padding: .5rem 0.75rem .5rem 0.75rem;
 
     /*border*/
     border-style: solid;
     border-color: #fff;
     border-width: 2px;
 }
+
+/* dropdowns */
+#dropdowns {
+  margin: 5rem 0 5rem 0;
+}
+
+/* dropdown */
+/* Style the button that is used to open and close the collapsible content */
+.dropdown {
+  background-color: #2e2e2e;
+  color: #fff;
+  cursor: pointer;
+  width: 100vw; 
+  /* 1vw = 1% of viewport width
+  1vh = 1% of viewport height */
+  padding: 2rem;
+  border: none;
+  text-align: left;
+  /* outline: none; */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .dropdown:hover {
+  background-color: #3c3c3c;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #222;
+}
+
 
 
 /* links */

@@ -47,6 +47,10 @@ article {
   top: -600px;
   z-index: 1;
 }
+#intro p {
+  text-align: center;
+  font-size: 2rem;
+}
 
 h1 {
   font-size: 7rem;

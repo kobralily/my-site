@@ -1,0 +1,23 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+.code {
+    text-decoration: underline;
+}
+.codeHours {
+    display: flex;
+    flex-direction: row;
+}
+.hours {
+    text-align: left;
+    margin-left: auto;
+}

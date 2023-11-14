@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(169, 171, 180);
+    color: #000;
+    margin: 0;
+}
+
+.semesterBox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 1rem;
+    background-color: rgb(246, 221, 225);
+}
+
+.titleBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0;
+    padding: 1rem;
+}
+h2 {
+    margin: 0;
+    padding: 1rem;
+}

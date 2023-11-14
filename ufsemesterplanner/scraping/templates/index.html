@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>UF Semester Planner</title>
+
+    <!-- <link rel="stylesheet" href="styles/main.css">-->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant&family=Nunito+Sans:wght@600&display=swap" rel="stylesheet"> -->
+
+
+</head>
+<body> <!-- option command "[" to collapse -->
+    <h1>UF Semester Planner</h1>
+    
+    <section id="submitinfo">
+        <div id="colorblock1"></div>
+        <div id="selecttype">
+            <div id="titleblock">
+                <h2>Select your degrees</h2>
+            </div>
+
+            <div id="majorselect">
+                <form id="degreeForm">
+                    <div id="dropdowns">
+                        
+                        <label for="majors">Major:</label>
+                        <input list="majors" id="majorslist" name="majors">
+                        
+                        <datalist id="majors">
+                        </datalist>
+
+                        <label for="majors2">2<sup>nd</sup> Major:</label>
+                        <input list="majors2" id="majors2list" name="majors">
+                        
+                        <datalist id="majors2">
+                            <option value="N/A"></option>
+                        </datalist>
+
+                        <label for="minors">Minor:</label>
+                        <input list="minors" id="minorslist" name="minors">
+                        
+                        <datalist id="minors">
+                            <option value="N/A"></option>
+                        </datalist>
+
+                        <label for="certificates">Certificate:</label>
+                        <input list="certificates" id="certlist" name="certificates">
+
+                        <datalist id="certificates">
+                            <option value="N/A"></option>
+                        </datalist>
+                    </div>
+                    <button type="submit" id="generatebutton">Generate Plan</button>
+                </form>
+            </div>
+            
+        </div>
+
+
+    </section>
+
+    <script>
+        var classesArray = {{ classesArrayJson | tojson | safe }};
+        // fun fact this throws an error unless the language is set to Django... just vscode things
+        
+    </script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='pytojs.js') }}"></script>
+</body>
+</html>

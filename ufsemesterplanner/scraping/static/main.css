@@ -1,0 +1,95 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(251, 244, 231);
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+section {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 4rem 0 0 0;
+    color: rgb(27, 78, 178);
+}
+
+h2 {
+    margin: 0;
+}
+
+/*-------------------SUBMITINFO---------------*/
+#submitinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60rem;
+    background-color: #fff;
+    margin: 2rem;
+}
+
+#colorblock1 {
+    background-color: rgba(217, 70, 2, 0.889); /* same as title */
+    width: 10px;
+    height: 15rem;
+    margin-bottom: auto;
+}
+#selecttype { 
+    background-color: rgb(255, 238, 207);
+    margin: 0 3rem 0 0rem;
+    padding: 0;
+    width: 100%;
+}
+
+#titleblock {
+    background-color: rgba(217, 70, 2, 0.889);
+    color: #fff;
+    margin: 0;
+    padding: 0.5rem;
+    max-width: 13rem;
+}
+
+#majorselect {
+    padding: 0 1rem 0 1rem;
+}
+
+/* ------------- DROPDOWNS ------------------ */
+form {
+    font-size: 1.5rem;
+    margin: 2rem 0 2rem 0;
+    max-width: 30rem;
+}
+input {
+    /* width: 100%; */
+    margin-left: 1rem;
+}
+label {
+    white-space: nowrap;
+}
+
+#dropdowns {
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------------------------------- */
+
+#generatebutton {
+    display: inline-block;
+    vertical-align: top; /* Adjust as needed for vertical alignment */
+
+    margin: 5rem;
+    background-color: rgb(27, 78, 178);
+    color: #fff;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 15px;
+}

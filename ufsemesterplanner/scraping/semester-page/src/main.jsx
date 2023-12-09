@@ -60,7 +60,7 @@ class App extends React.Component {
       ...start,
       classIds: startClassIds,
     };
-
+    
     const finishClassIds = Array.from(finish.classIds);
     finishClassIds.splice(destination.index, 0, draggableId);
     const newFinish = {
@@ -76,6 +76,7 @@ class App extends React.Component {
         [newFinish.id]: newFinish,
       },
     };
+    console.log("lol")
     this.setState(newState);
 
   };

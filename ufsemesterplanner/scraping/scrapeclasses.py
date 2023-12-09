@@ -71,16 +71,19 @@ def createCodeNameHours(itemsInLine):
         hours = itemsInLine[1].text
 
     else:
-        if itemsInLine[0].find('div') != None:
+        if itemsInLine[0].find('div') != None: #checks if theres a div
 
             courseCode = itemsInLine[0].find('a').text
 
             if itemsInLine[0].find('span') != None: #check for double & line
                 findSpan = itemsInLine[0].find('span')
                 courseCode = courseCode + " & " + findSpan.find('a').text #combine names - might not work
-                className = itemsInLine[1].text + " " + itemsInLine[1].find('span').text #NEED TO FIX NEED TO FIX NEED TO FIX
-                #itemsInLine[1].text alr includes the <td> text AND the <span> text, dont duplicate it. 
-                #find way to separate them to add space before the word and in the <span>
+                className = itemsInLine[1].text 
+
+                #find index where space is needed
+                subStringIndex = itemsInLine[1].text.find(itemsInLine[1].find('span').text)
+
+                className = className[0:subStringIndex] + " " + className[subStringIndex:] #add space
             
             else:
                 className = itemsInLine[1].text
@@ -89,9 +92,32 @@ def createCodeNameHours(itemsInLine):
             className = itemsInLine[1].text
         
         courseCode = courseCode.replace('\xa0', ' ') #fix weird space, XXX1111
-        hours = itemsInLine[2].text
+
+        if itemsInLine[2].text == "":
+            hours = getMissingHours(itemsInLine)
+        else:
+            hours = itemsInLine[2].text
 
     return [courseCode, className, hours]
+
+def getMissingHours(itemsInLine): 
+    link = itemsInLine[0].find('a')['href']
+    url = 'https://catalog.ufl.edu' + link
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+
+    divId = soup.find('div', id = 'fssearchresults')
+    stringh2 = divId.find('h2').text
+    creditIndex = stringh2.find("Credit")
+    hours = stringh2[creditIndex-2]
+
+    if itemsInLine[0].find('span') != None:
+        hours = int(hours)*2
+        str(hours)
+    return hours
+
+
+
 
 
 # def reorgArray(tempArray):
@@ -162,3 +188,6 @@ def scrapeClasses(majorName):
         return scrapeMinor(url)
     else:
         return scrapeMajor(url)
+
+
+#print(scrapeClasses("Accounting"))

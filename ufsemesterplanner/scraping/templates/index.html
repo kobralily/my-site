@@ -28,11 +28,11 @@
             </div>
 
             <div id="majorselect">
-                <form id="degreeForm">
+                <form id="degreeForm" action="/modelsemester" method="post">
                     <div id="dropdowns">
                         
                         <label for="majors">Major:</label>
-                        <input list="majors" id="majorslist" name="majors">
+                        <input list="majors" id="majorslist" name="majors" required>
                         
                         <datalist id="majors">
                         </datalist>
@@ -68,11 +68,12 @@
     </section>
 
     <script>
-        var classesArray = {{ classesArrayJson | tojson | safe }};
+        //
         // fun fact this throws an error unless the language is set to Django... just vscode things
-        
+
     </script>
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='main1.js') }}"></script>
     <script src="{{ url_for('static', filename='pytojs.js') }}"></script>
 </body>
+
 </html>

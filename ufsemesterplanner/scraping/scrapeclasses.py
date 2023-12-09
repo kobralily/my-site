@@ -35,31 +35,29 @@ def scrapeMinor(fullLink):
     
 
 
-def scrapeMajor(fullLink):
-    url = fullLink
+def scrapeMajor(url):
     page = requests.get(url)
     soup = BeautifulSoup(page.text, 'html.parser')
-
     
     divSemPlanner = soup.find('div', id = "modelsemesterplantextcontainer")
     table = divSemPlanner.find('table', class_ = "sc_plangrid")
     
     rows = table.find_all('tr')
 
-    semList = [] #semlist = [ [ semester 1 ] [ semester 2 ] ]
-    #------------------ [ [class1], [class2], [class3], ... ]
+    semList = [] # semlist = [ [ semester 1 ] [ semester 2 ] ]
+    # ------------------ [ [class1], [class2], [class3], ... ]
 
-    tempTag = soup.new_tag('div') #initialize blank tag
+    tempTag = soup.new_tag('div') # initialize blank tag
     for row in rows:
-        if any("plangrid" in cls for cls in row['class']): #check for substring in list of classes
-            if len(tempTag.find_all()) != 0: #check if list empty
+        if any("plangrid" in cls for cls in row['class']): # check for substring in list of classes
+            if len(tempTag.find_all()) != 0: # check if list empty
                 semList.append(appendClasses(tempTag))
                 tempTag.clear()
 
         else:
             tempTag.append(row)
 
-    #print(tempTag)
+    # print(tempTag)
     return semList
 
 
@@ -116,10 +114,6 @@ def getMissingHours(itemsInLine):
         str(hours)
     return hours
 
-
-
-
-
 # def reorgArray(tempArray):
 #     newTempArray = []
     
@@ -139,7 +133,6 @@ def appendClasses(rows):
     selectOne = 0 #track if selectOne is triggered
 
     for classLine in rows:
-
         itemsInLine = classLine.find_all('td')
 
         #selectOne ---------------------------------------------------
@@ -172,7 +165,6 @@ def appendClasses(rows):
 
 
 def scrapeClasses(majorName):
-
     link = scrapeLink(majorName)
 
     url = "https://catalog.ufl.edu" + link + "#modelsemesterplantext"
@@ -190,4 +182,5 @@ def scrapeClasses(majorName):
         return scrapeMajor(url)
 
 
-#print(scrapeClasses("Accounting"))
+if __name__ == '__main__':
+    print(scrapeClasses("Accounting"))

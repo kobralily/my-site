@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from bs4 import BeautifulSoup
 import requests
 import json
 from scrapeclasses import *
+import os
 
 app = Flask(__name__)
 
@@ -28,6 +29,11 @@ def modelsemester():
     classesArrayJson = json.dumps(classesArray)
     #return render_template('modelsemester.html')
     return render_template('modelsemester.html', classesArrayJson = classesArrayJson)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)

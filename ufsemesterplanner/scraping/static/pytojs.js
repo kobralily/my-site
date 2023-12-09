@@ -1,6 +1,6 @@
 //MAKE INTO DICTIONARY
 
-var parsedArray = JSON.parse(classesArray);
+var parsedArray = JSON.parse(classesArrayJson);
 console.log(parsedArray);
 
 // create new dictionary
@@ -70,7 +70,7 @@ for (var i = 0; i < parsedArray.length; i++) {
             classId++;
         }
     }
-
 }
+console.log(initialClassData);
 
-export { initialClassData };
+// export { initialClassData };

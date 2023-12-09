@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 //import App from './App.jsx'
 import styled from 'styled-components';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { tempinitialClassData } from '../../static/temppytojs.js';
+import { initialClassData } from '../../static/pytojs.js';
 import Semester from './semester.jsx';
 
 
@@ -13,10 +13,10 @@ const Container = styled.div`
 `;
 
 
-console.log(tempinitialClassData);
+console.log(initialClassData);
 
 class App extends React.Component {
-  state = tempinitialClassData;
+  state = initialClassData;
 
   onDragEnd = result => {
     const {destination, source, draggableId} = result;

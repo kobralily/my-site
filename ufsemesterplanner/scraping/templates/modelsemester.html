@@ -4,20 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ModelSemester Test </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/index-6cb97cf1.css') }}">
   </head>
   <body>
-    <h1>test</h1>
-    <!-- This script tag assigns the JSON from Flask to a JavaScript variable -->
+
+
+    <div id="root"></div>
+
     <script>
       var classesArrayJson = {{ classesArrayJson | tojson | safe }};
     </script>
-    <p id="classes-json"></p>
-    <div id="root"></div>
     <!-- Ensure the path to pytojs.js is correct -->
+    <script src="{{ url_for('static', filename='assets/index-04d53715.js') }}"></script>
     <script src="{{ url_for('static', filename='pytojs.js') }}"></script>
-    <script>
-      // This script will insert the JSON into the <p> element
-      document.getElementById('classes-json').textContent = JSON.stringify(classesArrayJson, null, 2);
-    </script>
+
   </body>
 </html>

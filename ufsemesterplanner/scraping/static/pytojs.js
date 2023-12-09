@@ -73,4 +73,4 @@ for (var i = 0; i < parsedArray.length; i++) {
 }
 console.log(initialClassData);
 
-// export { initialClassData };
+export { initialClassData };

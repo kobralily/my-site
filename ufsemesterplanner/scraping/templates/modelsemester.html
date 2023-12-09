@@ -3,19 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ModelSemester Test </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='assets/index-6cb97cf1.css') }}">
+    <title>ModelSemester Test</title>
+    <!-- Direct link to the CSS file on S3 -->
+    <link rel="stylesheet" href="https://semesterplannerbucket.s3.us-east-2.amazonaws.com/assets/index-6cb97cf1.css">
   </head>
   <body>
-
 
     <div id="root"></div>
 
     <script>
       var classesArrayJson = {{ classesArrayJson | tojson | safe }};
     </script>
-    <!-- Ensure the path to pytojs.js is correct -->
-    <script src="{{ url_for('static', filename='assets/index-c578298a.js') }}"></script>
+    <!-- Direct link to the JS file on S3 -->
+    <script src="https://semesterplannerbucket.s3.us-east-2.amazonaws.com/assets/index-c578298a.js"></script>
+    <!-- Local pytojs.js file -->
     <script src="{{ url_for('static', filename='pytojs.js') }}"></script>
 
   </body>
